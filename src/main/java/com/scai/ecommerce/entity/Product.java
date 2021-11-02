@@ -89,6 +89,14 @@ public class Product {
 	public void setPrice(float price) {
 		this.price = price;
 	}
+	
+	public Profile getProfile() {
+		return profile;
+	}
+
+	public void setProfile(Profile profile) {
+		this.profile = profile;
+	}
 
 	@Override
 	public String toString() {

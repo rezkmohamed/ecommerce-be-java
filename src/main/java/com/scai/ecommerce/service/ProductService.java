@@ -14,5 +14,5 @@ public interface ProductService {
 	
 	public List<ProductDTO> findProductByNameLike(String nameLike);
 	
-	public String saveProduct(Product product);
+	public String saveProduct(ProductDTO product);
 }

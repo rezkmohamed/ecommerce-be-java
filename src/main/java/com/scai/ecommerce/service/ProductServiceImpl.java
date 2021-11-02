@@ -9,48 +9,52 @@ import org.springframework.transaction.annotation.Transactional;
 import com.scai.ecommerce.dto.ProductDTO;
 import com.scai.ecommerce.entity.Product;
 import com.scai.ecommerce.repo.ProductRepo;
+import com.scai.ecommerce.utils.ProductUtils;
 
 @Service
 public class ProductServiceImpl implements ProductService {
 	@Autowired
 	private ProductRepo productRepo;
 	
-	
-	
 
 	@Override
 	@Transactional
 	public List<ProductDTO> findProducts() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Product> products = productRepo.findProducts();
+		
+		return ProductUtils.productEntityToDTO(products);
 	}
 
 	@Override
 	@Transactional
 	public List<ProductDTO> findProductsByCategory(String category) {
-		// TODO Auto-generated method stub
-		return null;
+		List<Product> products = productRepo.findProductsByCategory(category);
+		
+		return ProductUtils.productEntityToDTO(products);
 	}
 
 	@Override
 	@Transactional
 	public ProductDTO findProductById(String idProduct) {
-		// TODO Auto-generated method stub
-		return null;
+		Product productToFind = productRepo.findProductById(idProduct);
+		
+		return ProductUtils.productEntityToDTO(productToFind);
 	}
 
 	@Override
 	@Transactional
 	public List<ProductDTO> findProductByNameLike(String nameLike) {
-		// TODO Auto-generated method stub
-		return null;
+		List<Product> products = productRepo.findProductByNameLike(nameLike);
+		
+		return ProductUtils.productEntityToDTO(products);
 	}
 
 	@Override
 	@Transactional
-	public String saveProduct(Product product) {
-		// TODO Auto-generated method stub
-		return null;
+	public String saveProduct(ProductDTO product) {
+		Product productToSave = ProductUtils.productDTOToEntity(product);
+		
+		return productRepo.saveProduct(productToSave);
 	}
 
 }

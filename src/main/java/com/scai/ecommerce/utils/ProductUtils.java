@@ -7,14 +7,15 @@ import com.scai.ecommerce.dto.ProductDTO;
 import com.scai.ecommerce.entity.Product;
 
 public class ProductUtils {
-	public ProductDTO productEntityToDTO(Product product) {
+	public static ProductDTO productEntityToDTO(Product product) {
 		ProductDTO productDTO = new ProductDTO(product.getIdProduct(), product.getName(), 
 											   product.getCategory(), product.getImg(), product.getPrice());
+		productDTO.setProfile(ProfileUtils.profileEntityToDTO(product.getProfile()));
 		
 		return productDTO;
 	}
 	
-	public List<ProductDTO> productEntityToDTO(List<Product> products) {
+	public static List<ProductDTO> productEntityToDTO(List<Product> products) {
 		List<ProductDTO> ris = new ArrayList<>();
 		
 		for(Product p : products) {
@@ -22,5 +23,12 @@ public class ProductUtils {
 		}
 		
 		return ris;
+	}
+	
+	public static Product productDTOToEntity(ProductDTO productDTO) {
+		/**
+		 * FIXME
+		 */
+		return null;
 	}
 } 
