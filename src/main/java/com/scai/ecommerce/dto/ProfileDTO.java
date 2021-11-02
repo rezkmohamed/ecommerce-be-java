@@ -8,7 +8,13 @@ public class ProfileDTO {
 	private boolean isVendor;
 	private List<ProductDTO> products;
 	
-	public ProfileDTO() {}
+	public ProfileDTO() {}	
+
+	public ProfileDTO(String email, boolean isVendor) {
+		super();
+		this.email = email;
+		this.isVendor = isVendor;
+	}
 
 	public ProfileDTO(String idProfile, String email, boolean isVendor) {
 		super();
