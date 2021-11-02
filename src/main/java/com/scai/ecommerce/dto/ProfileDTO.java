@@ -40,4 +40,18 @@ public class ProfileDTO {
 	public void setVendor(boolean isVendor) {
 		this.isVendor = isVendor;
 	}
+
+	public List<ProductDTO> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<ProductDTO> products) {
+		this.products = products;
+	}
+
+	@Override
+	public String toString() {
+		return "ProfileDTO [idProfile=" + idProfile + ", email=" + email + ", isVendor=" + isVendor + ", products="
+				+ products + "]";
+	}
 }
