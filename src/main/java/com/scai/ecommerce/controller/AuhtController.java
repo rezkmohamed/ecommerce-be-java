@@ -44,11 +44,17 @@ public class AuhtController {
 			
 			return ResponseEntity.ok().headers(headers).build();        	
 		}
-		
-		
-		
-		
+				
 		return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+	}
+	
+	@PostMapping("/register")
+	public ResponseEntity<Boolean> register(@RequestBody ProfileDTO profileToRegister){
+		if(profileService.saveProfile(profileToRegister) != null) {
+			return new ResponseEntity<>(true, HttpStatus.OK);
+		}
+		
+		return new ResponseEntity<>(false, HttpStatus.BAD_REQUEST);
 	}
 	
 }

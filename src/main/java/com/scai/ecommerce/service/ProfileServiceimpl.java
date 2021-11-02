@@ -42,6 +42,10 @@ public class ProfileServiceimpl implements ProfileService {
 	@Override
 	@Transactional
 	public String saveProfile(ProfileDTO profile) {
+		Profile checkProfile = profileRepo.findProfileByEmail(profile.getEmail());
+		if(checkProfile != null) {
+			return null;
+		}
 		Profile profileToSave = ProfileUtils.profileDTOToEntity(profile);
 		
 		return profileRepo.saveProfile(profileToSave);
