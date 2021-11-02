@@ -5,7 +5,7 @@ import com.scai.ecommerce.entity.Profile;
 public interface ProfileRepo {
 	public Profile findProfile(String idProfile);
 	
-	public Profile findprofileByEmailAndPassword(String email, String password);
+	public Profile findProfileByEmailAndPassword(String email, String password);
 	
 	public Profile findProfileByEmail(String email);
 	

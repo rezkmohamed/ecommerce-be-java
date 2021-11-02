@@ -22,4 +22,11 @@ public class ProfileUtils {
 		
 		return ris;
 	}
+	
+	public static Profile profileDTOToEntity(ProfileDTO profileDTO) {
+		/**
+		 * FIXME 
+		 */
+		return null;
+	}
 }

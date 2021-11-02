@@ -31,7 +31,7 @@ public class ProfileRepoImpl implements ProfileRepo {
 	}
 
 	@Override
-	public Profile findprofileByEmailAndPassword(String email, String password) {
+	public Profile findProfileByEmailAndPassword(String email, String password) {
 		Session session = entityManager.unwrap(Session.class);
 		Query<Profile> query = session.createQuery("from Profile where email = :emailPar AND password = :passwordPar");
 		query.setParameter("emailpar", email);
