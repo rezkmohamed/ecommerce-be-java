@@ -52,15 +52,20 @@ public class ProductRepoImpl implements ProductRepo {
 	}
 
 	@Override
-	public Product findProductByNameLike(String nameLike) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Product> findProductByNameLike(String nameLike) {
+		Session session = entityManager.unwrap(Session.class);	
+		Query<Product> query = session.createQuery("from Product where name LIKE :nameLike");
+		query.setParameter("nameLike", "%"+nameLike+"%");
+		List<Product> products = query.getResultList();
+		
+		return products;
 	}
 
 	@Override
 	public String saveProduct(Product product) {
-		// TODO Auto-generated method stub
-		return null;
+		Session session = entityManager.unwrap(Session.class);	
+		String id = (String)session.save(product);
+		
+		return id;
 	}
-
 }
