@@ -26,9 +26,8 @@ public class ProductUtils {
 	}
 	
 	public static Product productDTOToEntity(ProductDTO productDTO) {
-		/**
-		 * FIXME
-		 */
-		return null;
+		Product product = new Product(productDTO.getName(), productDTO.getCategory(), productDTO.getImg(), productDTO.getPrice());
+		
+		return product;
 	}
 } 
