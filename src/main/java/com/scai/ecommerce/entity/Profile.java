@@ -1,9 +1,14 @@
 package com.scai.ecommerce.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -25,6 +30,11 @@ public class Profile {
 	
 	@Column(name="isvendor")
 	private boolean isVendor;
+	
+	@OneToMany(fetch=FetchType.LAZY,
+			   mappedBy="profile",
+			   cascade= CascadeType.ALL)
+	private List<Product> products;
 	
 	public Profile() {}
 
