@@ -8,13 +8,17 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.scai.ecommerce.dto.ProductDTO;
 import com.scai.ecommerce.entity.Product;
+import com.scai.ecommerce.entity.Profile;
 import com.scai.ecommerce.repo.ProductRepo;
+import com.scai.ecommerce.repo.ProfileRepo;
 import com.scai.ecommerce.utils.ProductUtils;
 
 @Service
 public class ProductServiceImpl implements ProductService {
 	@Autowired
 	private ProductRepo productRepo;
+	@Autowired
+	private ProfileRepo profileRepo;
 	
 
 	@Override
@@ -53,6 +57,8 @@ public class ProductServiceImpl implements ProductService {
 	@Transactional
 	public String saveProduct(ProductDTO product) {
 		Product productToSave = ProductUtils.productDTOToEntity(product);
+		Profile profile = profileRepo.findProfile(product.getIdprofile());
+		productToSave.setProfile(profile);
 		
 		return productRepo.saveProduct(productToSave);
 	}
