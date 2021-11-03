@@ -38,6 +38,17 @@ public class ProductController {
 		return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
 	}
 	
+	@GetMapping("/myproducts")
+	public ResponseEntity<List<ProductDTO>> getMyProducts(HttpServletRequest request){
+		String idProfile = requestUtils.idProfileFromToken(request);
+		List<ProductDTO> products = productService.findProductsByIdProfile(idProfile);
+		if(products != null) {
+			return new ResponseEntity<>(products, HttpStatus.OK);
+		}
+		
+		return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
+	}
+	
 	@GetMapping("/percategory/{category}")
 	public ResponseEntity<List<ProductDTO>> getProductsByCategory(@PathVariable String category){
 		List<ProductDTO> products = productService.findProductsByCategory(category);

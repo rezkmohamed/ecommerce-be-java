@@ -28,6 +28,14 @@ public class ProductServiceImpl implements ProductService {
 		
 		return ProductUtils.productEntityToDTO(products);
 	}
+	
+	@Override
+	@Transactional
+	public List<ProductDTO> findProductsByIdProfile(String idProfile) {
+		List<Product> products = productRepo.findProductsByIdProfile(idProfile);
+		
+		return ProductUtils.productEntityToDTO(products);
+	}
 
 	@Override
 	@Transactional
@@ -62,5 +70,4 @@ public class ProductServiceImpl implements ProductService {
 		
 		return productRepo.saveProduct(productToSave);
 	}
-
 }

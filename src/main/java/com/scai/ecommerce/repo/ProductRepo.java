@@ -7,6 +7,8 @@ import com.scai.ecommerce.entity.Product;
 public interface ProductRepo {
 	public List<Product> findProducts();
 	
+	public List<Product> findProductsByIdProfile(String idProfile);
+	
 	public List<Product> findProductsByCategory(String category);
 	
 	public Product findProductById(String idProduct);

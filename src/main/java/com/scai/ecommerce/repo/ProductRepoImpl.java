@@ -25,6 +25,16 @@ public class ProductRepoImpl implements ProductRepo {
 		
 		return products;
 	}
+	
+	@Override
+	public List<Product> findProductsByIdProfile(String idProfile) {
+		Session session = entityManager.unwrap(Session.class);	
+		Query<Product> query = session.createQuery("from Product where id_profile = :idProfile");
+		query.setParameter("idProfile", idProfile);
+		List<Product> products = query.getResultList();
+		
+		return products;
+	}
 
 	@Override
 	public List<Product> findProductsByCategory(String category) {

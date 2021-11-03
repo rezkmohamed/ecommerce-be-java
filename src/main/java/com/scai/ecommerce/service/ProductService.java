@@ -7,6 +7,8 @@ import com.scai.ecommerce.dto.ProductDTO;
 public interface ProductService {
 	public List<ProductDTO> findProducts();
 	
+	public List<ProductDTO> findProductsByIdProfile(String idProfile);
+	
 	public List<ProductDTO> findProductsByCategory(String category);
 	
 	public ProductDTO findProductById(String idProduct);
