@@ -18,7 +18,7 @@ public class RequestUtils {
 		String header = request.getHeader("Authorization");
 		String token = header.replace("Bearer ", "");
 		Jws<Claims> result =  Jwts.parser().setSigningKey(signingKey).parseClaimsJws(token);		
-		String idProfile = result.getBody().get("idUser", String.class);
+		String idProfile = result.getBody().get("idProfile", String.class);
 		
 		return idProfile;
 	}

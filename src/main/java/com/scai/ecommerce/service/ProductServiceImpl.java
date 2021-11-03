@@ -57,9 +57,8 @@ public class ProductServiceImpl implements ProductService {
 	@Transactional
 	public String saveProduct(ProductDTO product) {
 		Product productToSave = ProductUtils.productDTOToEntity(product);
-		Profile profile = profileRepo.findProfile(product.getIdprofile());
+		Profile profile = profileRepo.findProfile(product.getIdProfile());
 		productToSave.setProfile(profile);
-		System.out.println(productToSave);
 		
 		return productRepo.saveProduct(productToSave);
 	}

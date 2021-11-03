@@ -71,7 +71,7 @@ public class ProductController {
 	@PostMapping("/new")
 	public ResponseEntity<Boolean> addProduct(@RequestBody ProductDTO product, HttpServletRequest request){
 		String idProfile = requestUtils.idProfileFromToken(request);
-		product.setIdprofile(idProfile);
+		product.setIdProfile(idProfile);
 		if(productService.saveProduct(product) != null) {
 			return new ResponseEntity<>(true, HttpStatus.OK);
 		}

@@ -7,7 +7,7 @@ public class ProductDTO {
 	private String img;
 	private float price;
 	private ProfileDTO profile;
-	private String idprofile;
+	private String idProfile;
 	
 	public ProductDTO() {}
 
@@ -68,17 +68,17 @@ public class ProductDTO {
 		this.profile = profile;
 	}
 	
-	public String getIdprofile() {
-		return idprofile;
+	public String getIdProfile() {
+		return idProfile;
 	}
 
-	public void setIdprofile(String idprofile) {
-		this.idprofile = idprofile;
+	public void setIdProfile(String idprofile) {
+		this.idProfile = idprofile;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "ProductDTO [idProduct=" + idProduct + ", name=" + name + ", category=" + category + ", img=" + img
-				+ ", price=" + price + ", profile=" + profile + "]";
+				+ ", price=" + price + ", profile=" + profile + ", idProfile=" + idProfile + "]";
 	}
 }
