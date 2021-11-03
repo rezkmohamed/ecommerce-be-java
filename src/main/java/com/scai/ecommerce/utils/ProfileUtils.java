@@ -24,7 +24,7 @@ public class ProfileUtils {
 	}
 	
 	public static Profile profileDTOToEntity(ProfileDTO profileDTO) {
-		Profile profile = new Profile(profileDTO.getEmail(), profileDTO.getPassword(), profileDTO.isVendor());
+		Profile profile = new Profile(profileDTO.getEmail(), profileDTO.getPassword(), profileDTO.getIsVendor());
 
 		return profile;
 	}

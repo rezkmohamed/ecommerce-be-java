@@ -2,6 +2,8 @@ package com.scai.ecommerce.dto;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class ProfileDTO {
 	private String idProfile;
 	private String email;
@@ -40,11 +42,11 @@ public class ProfileDTO {
 		this.email = email;
 	}
 
-	public boolean isVendor() {
+	public boolean getIsVendor() {
 		return isVendor;
 	}
 
-	public void setVendor(boolean isVendor) {
+	public void setIsVendor(boolean isVendor) {
 		this.isVendor = isVendor;
 	}
 

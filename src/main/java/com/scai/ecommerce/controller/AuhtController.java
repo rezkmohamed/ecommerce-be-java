@@ -34,6 +34,9 @@ public class AuhtController {
 		if(profileToLogin != null) {
 			HttpHeaders headers = new HttpHeaders();
         	HashMap<String, Object> addedValues = new HashMap<String, Object>();
+        	addedValues.put("idProfile", profileToLogin.getIdProfile());
+        	addedValues.put("isVendor", profileToLogin.getIsVendor());
+
         	
         	String token = Jwts.builder()
         			.addClaims(addedValues)
