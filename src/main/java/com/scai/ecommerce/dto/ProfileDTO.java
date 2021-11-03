@@ -7,6 +7,7 @@ public class ProfileDTO {
 	private String email;
 	private boolean isVendor;
 	private List<ProductDTO> products;
+	private String password;
 	
 	public ProfileDTO() {}	
 
@@ -54,10 +55,18 @@ public class ProfileDTO {
 	public void setProducts(List<ProductDTO> products) {
 		this.products = products;
 	}
+	
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 	@Override
 	public String toString() {
 		return "ProfileDTO [idProfile=" + idProfile + ", email=" + email + ", isVendor=" + isVendor + ", products="
-				+ products + "]";
+				+ products + ", password=" + password + "]";
 	}
 }

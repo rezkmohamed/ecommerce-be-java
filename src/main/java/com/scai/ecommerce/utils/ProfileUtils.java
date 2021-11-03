@@ -24,9 +24,8 @@ public class ProfileUtils {
 	}
 	
 	public static Profile profileDTOToEntity(ProfileDTO profileDTO) {
-		/**
-		 * FIXME 
-		 */
-		return null;
+		Profile profile = new Profile(profileDTO.getEmail(), profileDTO.getPassword(), profileDTO.isVendor());
+
+		return profile;
 	}
 }

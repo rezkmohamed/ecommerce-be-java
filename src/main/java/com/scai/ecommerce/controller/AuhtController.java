@@ -50,6 +50,7 @@ public class AuhtController {
 	
 	@PostMapping("/register")
 	public ResponseEntity<Boolean> register(@RequestBody ProfileDTO profileToRegister){
+		System.out.println(profileToRegister);
 		if(profileService.saveProfile(profileToRegister) != null) {
 			return new ResponseEntity<>(true, HttpStatus.OK);
 		}

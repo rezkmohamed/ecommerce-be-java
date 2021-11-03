@@ -38,7 +38,7 @@ public class ProductController {
 		return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
 	}
 	
-	@GetMapping("/category/${category}")
+	@GetMapping("/percategory/{category}")
 	public ResponseEntity<List<ProductDTO>> getProductsByCategory(@PathVariable String category){
 		List<ProductDTO> products = productService.findProductsByCategory(category);
 		if(products != null) {
@@ -48,7 +48,7 @@ public class ProductController {
 		return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
 	}
 	
-	@GetMapping("/namelike/${nameLike}")
+	@GetMapping("/namelike/{nameLike}")
 	public ResponseEntity<List<ProductDTO>> getProductsByNameLike(@PathVariable String nameLike){
 		List<ProductDTO> products = productService.findProductByNameLike(nameLike);
 		if(products != null) {
