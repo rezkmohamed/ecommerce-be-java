@@ -16,4 +16,6 @@ public interface ProductService {
 	public List<ProductDTO> findProductByNameLike(String nameLike);
 	
 	public String saveProduct(ProductDTO product);
+	
+	public boolean shopProducts(List<ProductDTO> products, String idProfileShopper);
 }

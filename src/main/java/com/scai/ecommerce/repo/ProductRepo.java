@@ -16,4 +16,6 @@ public interface ProductRepo {
 	public List<Product> findProductByNameLike(String nameLike);
 	
 	public String saveProduct(Product product);
+	
+	public boolean shopProducts(List<Product> products);
 }

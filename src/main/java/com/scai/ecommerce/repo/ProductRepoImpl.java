@@ -79,4 +79,32 @@ public class ProductRepoImpl implements ProductRepo {
 		
 		return id;
 	}
+
+	@Override
+	public boolean shopProducts(List<Product> products) {
+		Session session = entityManager.unwrap(Session.class);	
+		
+		for(Product p : products) {
+			Query<Product> query = session.createQuery("from Product where id_product = :idProduct");
+			query.setParameter("idProduct", p.getIdProduct());
+			try {
+				Product product = query.getSingleResult();
+				if(product.getQuantity() >= p.getQuantity()) {
+					int quantityToSet = product.getQuantity() - p.getQuantity();
+					Query<Integer> queryUpdate = session.createQuery("UPDATE Product SET quantity = :newQuantity WHERE id_product = :idProduct");
+					queryUpdate.setParameter("newQuantity", quantityToSet);
+					queryUpdate.setParameter("idProduct", p.getIdProduct());
+					int isUpdated = queryUpdate.executeUpdate();
+					if(isUpdated != 1) {
+						return false;
+					}
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+				return false;
+			}
+		}
+		
+		return true;
+	}
 }

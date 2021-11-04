@@ -3,6 +3,7 @@ package com.scai.ecommerce.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -69,5 +70,17 @@ public class ProductServiceImpl implements ProductService {
 		productToSave.setProfile(profile);
 		
 		return productRepo.saveProduct(productToSave);
+	}
+
+	@Override
+	@Transactional
+	public boolean shopProducts(List<ProductDTO> products, String idProfileShopper) {
+		/**
+		 * FIXME
+		 */
+		
+		
+		
+		return false;
 	}
 }

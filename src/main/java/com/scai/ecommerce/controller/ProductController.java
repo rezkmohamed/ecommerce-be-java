@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -88,5 +89,20 @@ public class ProductController {
 		}
 		
 		return new ResponseEntity<>(false, HttpStatus.BAD_REQUEST);
+	}
+	/**
+	 * FIXME: 
+	 * TO IMPLEMENT
+	 * @param products
+	 * @param request
+	 * @return
+	 */
+	@PutMapping("/shop")
+	public ResponseEntity<Boolean> shopProducts(@RequestBody List<ProductDTO> products, HttpServletRequest request) {
+		String idProfile = requestUtils.idProfileFromToken(request);
+
+		
+		
+		return null;
 	}
 }
