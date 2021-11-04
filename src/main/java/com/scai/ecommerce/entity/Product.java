@@ -34,6 +34,9 @@ public class Product {
 	@Column(name="price")
 	private float price;
 	
+	@Column(name="quantity")
+	private int quantity;
+	
 	@ManyToOne(cascade={CascadeType.PERSIST, CascadeType.MERGE, 
 	           CascadeType.REFRESH, CascadeType.DETACH},
 			   fetch=FetchType.LAZY)
@@ -98,9 +101,17 @@ public class Product {
 		this.profile = profile;
 	}
 
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+  
 	@Override
 	public String toString() {
 		return "Product [idProduct=" + idProduct + ", name=" + name + ", category=" + category + ", img=" + img
-				+ ", price=" + price + ", profile=" + profile + "]";
+				+ ", price=" + price + ", quantity=" + quantity + ", profile=" + profile + "]";
 	}
 }

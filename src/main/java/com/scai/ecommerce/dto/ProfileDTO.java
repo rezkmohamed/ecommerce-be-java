@@ -2,7 +2,6 @@ package com.scai.ecommerce.dto;
 
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ProfileDTO {
 	private String idProfile;

@@ -10,6 +10,7 @@ public class ProductUtils {
 	public static ProductDTO productEntityToDTO(Product product) {
 		ProductDTO productDTO = new ProductDTO(product.getIdProduct(), product.getName(), 
 											   product.getCategory(), product.getImg(), product.getPrice());
+		productDTO.setQuantity(product.getQuantity());
 		productDTO.setProfile(ProfileUtils.profileEntityToDTO(product.getProfile()));
 		
 		return productDTO;
@@ -27,6 +28,7 @@ public class ProductUtils {
 	
 	public static Product productDTOToEntity(ProductDTO productDTO) {
 		Product product = new Product(productDTO.getName(), productDTO.getCategory(), productDTO.getImg(), productDTO.getPrice());
+		product.setQuantity(productDTO.getQuantity());
 		
 		return product;
 	}

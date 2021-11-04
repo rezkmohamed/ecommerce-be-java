@@ -6,8 +6,10 @@ public class ProductDTO {
 	private String category;
 	private String img;
 	private float price;
+	private int quantity;
 	private ProfileDTO profile;
 	private String idProfile;
+	
 	
 	public ProductDTO() {}
 
@@ -76,9 +78,18 @@ public class ProductDTO {
 		this.idProfile = idprofile;
 	}
 
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
 	@Override
 	public String toString() {
 		return "ProductDTO [idProduct=" + idProduct + ", name=" + name + ", category=" + category + ", img=" + img
-				+ ", price=" + price + ", profile=" + profile + ", idProfile=" + idProfile + "]";
+				+ ", price=" + price + ", quantity=" + quantity + ", profile=" + profile + ", idProfile=" + idProfile
+				+ "]";
 	}
 }

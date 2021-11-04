@@ -67,6 +67,7 @@ public class ProductRepoImpl implements ProductRepo {
 		Query<Product> query = session.createQuery("from Product where name LIKE :nameLike");
 		query.setParameter("nameLike", "%"+nameLike+"%");
 		List<Product> products = query.getResultList();
+		System.out.println("products___" + products);
 		
 		return products;
 	}
