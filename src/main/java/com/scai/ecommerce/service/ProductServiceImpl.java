@@ -75,12 +75,8 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	@Transactional
 	public boolean shopProducts(List<ProductDTO> products, String idProfileShopper) {
-		/**
-		 * FIXME
-		 */
+		List<Product> productsEntity = ProductUtils.productDTOToEntityWithIds(products);
 		
-		
-		
-		return false;
+		return productRepo.shopProducts(productsEntity);
 	}
 }

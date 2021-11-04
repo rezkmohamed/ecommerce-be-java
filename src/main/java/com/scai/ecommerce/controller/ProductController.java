@@ -90,19 +90,14 @@ public class ProductController {
 		
 		return new ResponseEntity<>(false, HttpStatus.BAD_REQUEST);
 	}
-	/**
-	 * FIXME: 
-	 * TO IMPLEMENT
-	 * @param products
-	 * @param request
-	 * @return
-	 */
+
 	@PutMapping("/shop")
 	public ResponseEntity<Boolean> shopProducts(@RequestBody List<ProductDTO> products, HttpServletRequest request) {
 		String idProfile = requestUtils.idProfileFromToken(request);
-
+		if(productService.shopProducts(products, idProfile)) {
+			return new ResponseEntity<>(true, HttpStatus.OK);
+		}
 		
-		
-		return null;
+		return new ResponseEntity<>(false, HttpStatus.BAD_REQUEST);
 	}
 }
