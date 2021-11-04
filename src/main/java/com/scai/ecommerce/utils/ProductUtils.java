@@ -32,4 +32,16 @@ public class ProductUtils {
 		
 		return product;
 	}
+	
+	public static List<Product> productDTOToEntityWithIds(List<ProductDTO> productsDTO){
+		List<Product> products = new ArrayList<>();
+		for(ProductDTO productDTO : productsDTO) {
+			Product product = new Product();
+			product.setIdProduct(productDTO.getIdProduct());
+			product.setQuantity(productDTO.getQuantity());
+			products.add(product);
+		}
+		
+		return products;
+	}
 } 

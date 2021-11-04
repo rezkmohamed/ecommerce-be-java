@@ -100,7 +100,6 @@ public class ProductRepoImpl implements ProductRepo {
 					}
 				}
 			} catch (Exception e) {
-				// TODO: handle exception
 				return false;
 			}
 		}
