@@ -41,7 +41,7 @@ public class AuhtController {
         	String token = Jwts.builder()
         			.addClaims(addedValues)
         			.setIssuedAt(new Date(System.currentTimeMillis()))
-					.setExpiration(new Date(System.currentTimeMillis() + 4 * 120 * 60 * 1000))
+//					.setExpiration(new Date(System.currentTimeMillis() + 4 * 120 * 60 * 1000))
 					.signWith(SignatureAlgorithm.HS512, this.signingKey).compact();
         	headers.add("Authentication","Bearer " + token);
 			
